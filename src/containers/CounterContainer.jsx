@@ -3,7 +3,7 @@
 // 그리고, HTML 태그들을 사용하지 않고 다른 프리젠테이셔널 컴포넌트들을 불러와서 사용합니다.
 
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import Counter from '../components/Counter';
 import { increase, decrease, setDiff } from '../modules/counter';
 
@@ -12,7 +12,9 @@ export default function CounterContainer() {
   const { number, diff } = useSelector(state => ({
     number: state.counter.number,
     diff: state.counter.diff
-  }))
+  }),
+    shallowEqual
+  );
 
   const dispatch = useDispatch();
 

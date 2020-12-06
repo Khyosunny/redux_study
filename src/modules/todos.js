@@ -21,7 +21,7 @@ export const toggleTodo = id => ({
 // 초기 상태 선언
 const initialState = [
   {
-    id: 1,
+    id: 0,
     text: '예시',
     done: false
   }
